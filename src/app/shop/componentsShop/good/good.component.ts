@@ -1,3 +1,4 @@
+import { APIService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./good.component.scss']
 })
 export class GoodComponent implements OnInit {
+  
+  public echantillon:any[] = [
+    69, 476, 729, 598, 644, 140, 517, 303, 487, 414, 687, 579, 522, 731, 423, 370
+  ];
 
-  constructor() { }
+  public Heroes:any[] = [];
+
+  constructor(private _api:APIService) {}
 
   ngOnInit(): void {
+    for (const i of this.echantillon) {
+      this._api.getOne(i).subscribe((h)=>this.Heroes.push(h));
+    }
   }
 
 }
