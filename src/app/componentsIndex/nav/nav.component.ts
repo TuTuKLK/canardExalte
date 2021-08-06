@@ -7,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  
   constructor() { }
-
+  
+  public switchToBad(){
+    
+  }
+  
   ngOnInit(): void {
   }
 
