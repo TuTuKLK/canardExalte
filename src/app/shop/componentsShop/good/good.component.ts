@@ -1,5 +1,7 @@
 import { APIService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { TestcoService } from './../../../service/testco.service';
+
 
 @Component({
   selector: 'app-good',
@@ -20,6 +22,11 @@ export class GoodComponent implements OnInit {
     for (const i of this.echantillon) {
       this._api.getOne(i).subscribe((h)=>this.Heroes.push(h));
     }
+  constructor(private _testhttp:TestcoService) { }
+
+  ngOnInit(): void {
+    this._testhttp.getHero().subscribe(res=>console.log(res));
+
   }
 
 }
