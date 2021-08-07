@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TestcoService } from './../../../service/testco.service';
+
 
 @Component({
   selector: 'app-good',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GoodComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _testhttp:TestcoService) { }
 
   ngOnInit(): void {
+    this._testhttp.getHero().subscribe(res=>console.log(res));
+
   }
 
 }
