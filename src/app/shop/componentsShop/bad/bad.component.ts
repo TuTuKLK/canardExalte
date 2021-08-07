@@ -1,3 +1,4 @@
+import { TestcoService } from './../../../service/testco.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BadComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private _testhttp:TestcoService) { }
 
   ngOnInit(): void {
+    this._testhttp.getHero().subscribe(res=>console.log(res));
   }
 
 }
