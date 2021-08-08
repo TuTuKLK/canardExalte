@@ -29,4 +29,29 @@ export class APIService {
   //   console.log("https://www.superheroapi.com/api.php/10159385542572346/"+x)
   // }
 
+//   private get _basic_url(): string {
+//     return ${this._url}${this._token}/;
+//   }
+
+
+//   public getAllSuperHeroes():Observable<Iprofile[]> {
+//     return this._http.get<Iprofile[]>(this._basic_url);
+//   }
+
+//   public getOneSuperHeroesByID(id:number):Observable<Iprofile> {
+//     return this._http.get<Iprofile>(this._basic_url+id);
+//   }
+
+//   public getSuperHeroesByName(name:string):Observable<Iprofile[]> {
+//     return this._http.get<Iprofile[]>(this._basic_url+'search/'+name);
+//   }
+
+//   export interface Iprofile {
+//     id : number ;
+//     name : string ;
+//     powerstats? : any ;
+//     appearence? : any ;
+//     gender? : string;
+// }
+
 }
