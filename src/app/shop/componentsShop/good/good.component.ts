@@ -1,5 +1,7 @@
 import { APIService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { TestcoService } from './../../../service/testco.service';
+
 
 @Component({
   selector: 'app-good',
