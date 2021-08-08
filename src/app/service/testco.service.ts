@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BadComponent } from '../shop/componentsShop/bad/bad.component';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,10 @@ export class TestcoService {
 
   constructor(private _http: HttpClient) { }
   public getHero(): Observable<any>{
-    this.echantillon.forEach(element => {
-    return this._http.get(`https://www.superheroapi.com/api.php/${this.token}/${element}`);
-    });
+    // this.echantillon.forEach(element => {
+    // return this._http.get(`https://www.superheroapi.com/api.php/${this.token}/${element}`);
+    // });
     return this._http.get(`https://www.superheroapi.com/api.php/${this.token}/${this.idRandom()}`);
+    
   }
 }
