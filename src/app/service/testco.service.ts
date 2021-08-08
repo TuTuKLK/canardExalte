@@ -17,9 +17,14 @@ export class TestcoService {
 
 
   public id : number = 372;
+  public getOne(id:number):Observable<any> {
+    return this._http.get<any>(this._url+id);
+  
+  }
   public idRandom(){
     return (Math.floor(Math.random() * 731)+1);
   }
+  
   public echantillon:any[] = [
     69, 476, 729, 598, 644, 140, 517, 303, 487, 414, 687, 579, 522, 731, 423, 370
   ];

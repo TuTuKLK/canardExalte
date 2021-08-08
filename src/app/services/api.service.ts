@@ -7,11 +7,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class APIService {
+    //! Constriction de l'URL ne pas toucher cette partie
+    private _token : string = '10159385542572346';
+    private _url : string = "https://www.superheroapi.com/api.php/"
+    private get _full_url(): string {
+      return `${this._url}${this._token}/`
+    };
+    //! ***********************************************
 
   // public Batman:Url = "https://www.superheroapi.com/api.php/10159385542572346/69"
 
 
-  private _url : string = "https://www.superheroapi.com/api/10159385542572346/";
+  // private _url : string = "https://www.superheroapi.com/api/10159385542572346/";
   
   constructor(private _http: HttpClient) {}
 
