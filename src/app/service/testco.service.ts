@@ -7,11 +7,17 @@ import { BadComponent } from '../shop/componentsShop/bad/bad.component';
   providedIn: 'root'
 })
 export class TestcoService {
-  
-  private token : string = '10159385542572346';
+  //! Constriction de l'URL ne pas toucher cette partie
+  private _token : string = '10159385542572346';
+  private _url : string = "https://www.superheroapi.com/api.php/"
+  private get _full_url(): string {
+    return `${this._url}${this._token}/`
+  };
+  //! ***********************************************
+
+
   public id : number = 372;
   public idRandom(){
-    // return Math.floor(Math.random() * (731 - min + 1)) + min;
     return (Math.floor(Math.random() * 731)+1);
   }
   public echantillon:any[] = [
@@ -22,10 +28,19 @@ export class TestcoService {
 
   constructor(private _http: HttpClient) { }
   public getHero(): Observable<any>{
-    // this.echantillon.forEach(element => {
-    // return this._http.get(`https://www.superheroapi.com/api.php/${this.token}/${element}`);
-    // });
-    return this._http.get(`https://www.superheroapi.com/api.php/${this.token}/${this.idRandom()}`);
-    
+    return this._http.get(`${this._full_url}/${this.idRandom()}`);
   }
+  public getHeroById(id:number): Observable<any>{
+    return this._http.get(`${this._full_url}/${id}`);
+  }
+  public getHeroesByName(name:string):Observable<any> {
+        // return this._http.get(this._full_url+'search/'+name);
+        return this._http.get(`${this._full_url}search/${name}`);
+      }
+  // public getGood(id:string): Observable<any>{
+  //   return this._http.get(`${this._full_url}/${id}`);
+  // }
+  // public getBad(id:string): Observable<any>{
+  //   return this._http.get(`${this._full_url}/${id}`);
+  // }
 }

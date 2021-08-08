@@ -8,12 +8,21 @@ import { TestcoService } from './../../../service/testco.service';
   styleUrls: ['./good.component.scss']
 })
 export class GoodComponent implements OnInit {
+  public echantillon:any[] = [
+    69, 476, 729, 598, 644, 140, 517, 303, 487, 414, 687, 579, 522, 731, 423, 370
+  ];
 
   constructor(private _testhttp:TestcoService) { }
 
   ngOnInit(): void {
-    this._testhttp.getHero().subscribe(res=>console.log(res));
+    this.echantillon.forEach(element => {
+    this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.name} fait partie des ${res.biography.alignment=="good"?"Héros":"Vilains"}`));
+    });
 
+
+    // this.echantillon.forEach(element => {
+    //   this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.biography.alignment=="good"}`?`${res.name} fait partie des Héros`:null));
+    //   });
   }
 
 }
