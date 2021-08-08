@@ -25,8 +25,14 @@ export class GoodComponent implements OnInit {
   constructor(private _testhttp:TestcoService) { }
 
   ngOnInit(): void {
-    this._testhttp.getHero().subscribe(res=>console.log(res));
+    this.echantillon.forEach(element => {
+    this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.name} fait partie des ${res.biography.alignment=="good"?"Héros":"Vilains"}`));
+    });
 
+
+    // this.echantillon.forEach(element => {
+    //   this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.biography.alignment=="good"}`?`${res.name} fait partie des Héros`:null));
+    //   });
   }
 
 }

@@ -23,7 +23,7 @@ export class APIService {
   //   console.log("https://www.superheroapi.com/api.php/10159385542572346/"+x)
   // }
 
-//   private get _basic_url(): string {
+  // private get _basic_url(): string {
 //     return ${this._url}${this._token}/;
 //   }
 
