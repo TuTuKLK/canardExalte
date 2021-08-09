@@ -8,6 +8,8 @@ const routes: Routes = [
   {path:"shop", loadChildren :
     () => import('./shop/shop.module').then(m => m.ShopModule)
   },
+  {path:"delivery", loadChildren :
+    () => import('./delivery/delivery.module').then(m => m.DeliveryModule)}
 ];
 
 @NgModule({

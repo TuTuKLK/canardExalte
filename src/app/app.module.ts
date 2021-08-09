@@ -1,3 +1,4 @@
+import { DeliveryModule } from './delivery/delivery.module';
 import { ShopModule } from './shop/shop.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,7 @@ import { AccueilComponent } from './componentsIndex/accueil/accueil.component';
     AppRoutingModule,
     ShopModule,
     HttpClientModule,
+    DeliveryModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
