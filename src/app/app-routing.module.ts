@@ -1,3 +1,4 @@
+import { AproposComponent } from './componentsIndex/apropos/apropos.component';
 import { AccueilComponent } from './componentsIndex/accueil/accueil.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,8 @@ const routes: Routes = [
     () => import('./shop/shop.module').then(m => m.ShopModule)
   },
   {path:"delivery", loadChildren :
-    () => import('./delivery/delivery.module').then(m => m.DeliveryModule)}
+    () => import('./delivery/delivery.module').then(m => m.DeliveryModule)},
+  {path:'apropos', component:AproposComponent},
 ];
 
 @NgModule({
