@@ -17,13 +17,28 @@ export class GoodComponent implements OnInit {
 
   public Heroes: any[] = [];
   public testHTML: any;
+  public good: any;
 
   constructor(private _api: APIlocalService) { }
 
+  public getOneGood() {
+    this._api.getRandomHero().subscribe(res => this.good = res);
+    while (this.good.biography.alignment !== "good") {
+      this._api.getRandomHero().subscribe(res => this.good = res);
+    }
+    return this.good;
+    //  ne marche pas: renvoit aléatoirement un hero good ou bad
+  }
 
   ngOnInit(): void {
     this._api.getRandomHero().subscribe(res => this.testHTML = res);
 
+
+    for (const id of this.echantillon) {
+      this._api.getHeroById(id).subscribe((h) => this.Heroes.push(h));
+    }
+
+    this.getOneGood();
 
 
 
