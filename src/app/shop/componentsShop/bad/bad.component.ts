@@ -13,24 +13,37 @@ export class BadComponent implements OnInit {
   ];
   public nameHero:string = 'buffy';
 
-  // public getBad(res:any,idHero){
-  //   this._testhttp.getHeroList().subscribe(res=>console.log(res.alignment));
+  public hero = '';
+  public align = '';
 
-  //   if res.biography.alignment=="bad"
-  // }
 
 
   constructor(private _testhttp:TestcoService) { }
+  public getAllBad(element:number){
+    let align=''
+    this._testhttp.getHeroById(element).subscribe(res=>align=res.biograhpy.alignment)
+    console.log(this._testhttp.getHeroById(element).subscribe(res=>res.name))
+    if(align=='bad')
+    return console.log(this._testhttp.getHeroById(element).subscribe(res=>res.name))    
+  }
 
   ngOnInit(): void {
-  // this.echantillon.forEach(element => {
-  //   this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.name} fait partie des ${res.biography.alignment=="good"?"Héros":"Vilains"}`));
-  //   });
+  this.echantillon.forEach(element => {
+    this._testhttp.getHeroById(element).subscribe(res=>`${this.align=res.biography.alignment}${this.hero=res.name}`);
+    // this._testhttp.getHeroById(element).subscribe(res=>this.hero=res.name);
+    if(this.align==='bad'){
+      console.log(this.hero)
+    }
+    
+      // `${res.biography.alignment=="good"}`?console.log(res.name):undefined);
+  });
 
-    this._testhttp.getHero().subscribe(reponse=>console.log(reponse));
-
-
-    this._testhttp.getHeroesByName("batman").subscribe(reponse=>console.log(reponse));
+  this._testhttp.getHero().subscribe(reponse=>console.log(reponse));
+  // this._testhttp.getHeroesByName("batman").subscribe(reponse=>console.log(reponse));
+  
+  // this._testhttp.echantillon.forEach(element => {
+  //   this.getAllBad(element)
+  // });
 
     }
 }
