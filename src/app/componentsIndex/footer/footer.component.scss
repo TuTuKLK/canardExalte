@@ -18,7 +18,7 @@
             text-decoration: none;
         }
         .superHuber {
-            font-size: 60px;
+            font-size: 40px;
             font-family: 'Indie Flower', cursive;
             color: #fa3030;
         }
@@ -55,12 +55,11 @@
 
         .entity {
             .tamu-mark {
-                text-transform: uppercase;
                 font-family: 'Indie Flower', cursive;
                 color: #000;
                 text-align: center;
                 margin-bottom: 7px;
-                font-size: 28px;
+                font-size: 20px;
             }
             .unit-mark {
                 font-family: 'Indie Flower', cursive;
@@ -94,7 +93,7 @@
     }
         .menu {
             display: flex;
-            max-width: 70rem;
+            max-width: 50rem;
             margin: auto;
             color: #fde841;
             font-size: 30px;
