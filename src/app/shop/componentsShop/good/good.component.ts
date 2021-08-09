@@ -16,18 +16,18 @@ export class GoodComponent implements OnInit {
 
   public Heroes:any[] = [];
 
-  constructor(private _api:APIService) {}
+  constructor(private _api:TestcoService) {}
 
   ngOnInit(): void {
     for (const i of this.echantillon) {
       this._api.getOne(i).subscribe((h)=>this.Heroes.push(h));
     }
-  constructor(private _testhttp:TestcoService) { }
+  // constructor(private _testhttp:TestcoService) { }
 
-  ngOnInit(): void {
-    this.echantillon.forEach(element => {
-    this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.name} fait partie des ${res.biography.alignment=="good"?"Héros":"Vilains"}`));
-    });
+  // ngOnInit(): void {
+  //   this.echantillon.forEach(element => {
+  //   this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.name} fait partie des ${res.biography.alignment=="good"?"Héros":"Vilains"}`));
+  //   });
 
 
     // this.echantillon.forEach(element => {
