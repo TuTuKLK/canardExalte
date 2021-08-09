@@ -1,9 +1,41 @@
-<p>good works!</p>
-
 <!-- <div *ngFor="let Heroe of Heroes">
     {{Heroe.name}}
     
 </div> -->
-<div *ngIf="testHTML">
+<!-- <div *ngIf="testHTML">
   <p>Bonjour {{testHTML.name}} !</p>
-</div>
+</div> -->
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Hero</th>
+      <th>Genre</th>
+      <th>Race</th>
+      <th>Ajouter au panier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td *ngIf="testHTML"><img src="{{testHTML.image.url}}" alt=""></td>
+      <td *ngIf="testHTML">{{testHTML.name}}</td>
+      <td *ngIf="testHTML">{{testHTML.appearance.gender}}</td>
+      <td *ngIf="testHTML">{{testHTML.appearance.race}}</td>
+      <td><button>+</button></td>
+    </tr>
+    <tr>
+      <td *ngIf="testHTML"><img src="{{testHTML.image.url}}" alt=""></td>
+      <td *ngIf="testHTML">{{testHTML.name}}</td>
+      <td *ngIf="testHTML">{{testHTML.appearance.gender}}</td>
+      <td *ngIf="testHTML">{{testHTML.appearance.race}}</td>
+      <td><button>+</button></td>
+    </tr>
+    <tr>
+      <td *ngIf="testHTML"><img src="{{testHTML.image.url}}" alt=""></td>
+      <td *ngIf="testHTML">{{testHTML.name}}</td>
+      <td *ngIf="testHTML">{{testHTML.appearance.gender}}</td>
+      <td *ngIf="testHTML">{{testHTML.appearance.race}}</td>
+      <td><button>+</button></td>
+    </tr>
+  </tbody>
+</table>
