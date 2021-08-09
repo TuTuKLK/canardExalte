@@ -38,7 +38,7 @@ div.separer{ //image jaune pour séparer les 2 images <
         background-image: url("../../../assets/acceuil_separateur.png");
         background-repeat: no-repeat;
         background-size: 100%;
-        margin-bottom: -43%;
+        margin-bottom: -55%;
 }
 
 
@@ -47,10 +47,10 @@ div.separer{ //image jaune pour séparer les 2 images <
 div.ornella{ // Mise en page du body
     
     background-image: url("../../../assets/acceuil.png");
-    background-repeat: no-repeat;
     background-size: 100%;
     color: white;
-    font-size: 50px;
+    font-size: 40px;
+    margin-bottom: -15%;
 }
 
 h1{
@@ -60,18 +60,21 @@ h1{
 
 p{
     margin-left: 4%;
-    color: #feac40;
-    font-size: 50px;
+    color: #fde841;
+    font-size: 30px;
 }
 
 h2{
-    color: #fe0001;
+    color: #8b2020;
     text-align: center;
+    font-size: 58px;
+    padding-top:2%;
 }
 
 h4{
     font-size: 18px;
     text-align: end;
-    color:#8a5613;
+    color:#fde841;
     margin-right: 1%;
+    padding-top: 9%;
 }
