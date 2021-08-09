@@ -7,23 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChronoComponent implements OnInit {
 
-  public seconds: number = 30;
-  private _timer: any = 30;
-  public timerIsActive: boolean = false;
+  public seconds: number = 40;
+  private _timer: any;
+  public state: any;
 
   constructor() { }
 
   ngOnInit(): void {
     this.startChrono();
+
+    if(this.seconds < 35){
+      this._timer = setInterval(() => this.removeOneSecond(), 10);
+    }
   }
 
   public startChrono(){
     this._timer = setInterval(() => this.removeOneSecond(), 1000);
-    this.timerIsActive = true;
+
+    if(this.seconds < 35){
+      this.state = true
+    }
     return this.seconds;
   }
 
   private removeOneSecond(){
     this.seconds--;
+  }
+
+  public stopChrono(){
+    clearInterval(this._timer);
   }
 }
