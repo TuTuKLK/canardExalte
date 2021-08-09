@@ -20,6 +20,9 @@ export class GoodComponent implements OnInit {
   public testHTML: any;
   public good: any;
 
+  public hero = '';
+  public align = '';
+
   private _remplir() {
     for (let x = 1; x < 732; x++) {
       this.full.push(x)
@@ -67,25 +70,19 @@ export class GoodComponent implements OnInit {
     //? fonction qui donne un seul hero aléatoire gentil pour le hero du jour
     // this.getOneGood();
 
-
-    // console.log(this.full)
-
-
-
-    // for (const i of this.echantillon) {
-    //   this._api.getOne(i).subscribe((h)=>this.Heroes.push(h));
-    // }
-    // constructor(private _testhttp:TestcoService) { }
-
-    // ngOnInit(): void {
-    //   this.echantillon.forEach(element => {
-    //   this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.name} fait partie des ${res.biography.alignment=="good"?"Héros":"Vilains"}`));
-    //   });
+    this.full.forEach(element => {
+      this._api.getHeroById(element).subscribe(res=>this._setHero(res));
+    });
 
 
-    // this.echantillon.forEach(element => {
-    //   this._testhttp.getHeroById(element).subscribe(res=>console.log(`${res.biography.alignment=="good"}`?`${res.name} fait partie des Héros`:null));
-    //   });
+    
+  }
+  private _setHero(res:any){
+    this.align=res.biography.alignment;
+    this.hero=res.name;
+    if(this.align==='good'){
+      console.log(`${this.hero} est dans la liste des Héros`);
+    }
   }
 
 }
