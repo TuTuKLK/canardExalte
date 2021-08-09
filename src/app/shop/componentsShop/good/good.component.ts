@@ -50,14 +50,15 @@ export class GoodComponent implements OnInit {
   //   });
   // }
   public setSrc(html: HTMLImageElement) {
-    html.src = "" //! ajouter une image par défaut pour les heros sans image
+    html.src = "../../asset/default.png" //! ajouter une image par défaut pour les heros sans image
   }
 
   ngOnInit(): void {
     this._api.getRandomHero().subscribe(res => this.testHTML = res);
 
-    // ? affiche tous les heros gentils
     this._remplir();
+
+    // ? affiche tous les heros gentils
     for (const id of this.full) {
       this._api.getHeroById(id).subscribe((h) => this.Heroes.push(h));
     }
@@ -70,17 +71,17 @@ export class GoodComponent implements OnInit {
     //? fonction qui donne un seul hero aléatoire gentil pour le hero du jour
     // this.getOneGood();
 
+    // ? récupère tous les heros 
     this.full.forEach(element => {
-      this._api.getHeroById(element).subscribe(res=>this._setHero(res));
+      this._api.getHeroById(element).subscribe(res => this._setHero(res));
     });
 
-
-    
   }
-  private _setHero(res:any){
-    this.align=res.biography.alignment;
-    this.hero=res.name;
-    if(this.align==='good'){
+  // ? trie la liste de tous les heros pour ne garder que les 'good'
+  private _setHero(res: any) {
+    this.align = res.biography.alignment;
+    this.hero = res.name;
+    if (this.align === 'good') {
       console.log(`${this.hero} est dans la liste des Héros`);
     }
   }
