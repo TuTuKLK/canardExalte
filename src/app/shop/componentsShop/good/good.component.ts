@@ -1,6 +1,7 @@
 import { APIService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { TestcoService } from './../../../service/testco.service';
+import { APIlocalService } from 'src/app/services/apilocal.service';
 
 
 @Component({
@@ -15,13 +16,21 @@ export class GoodComponent implements OnInit {
   ];
 
   public Heroes:any[] = [];
+  public testHTML: string ="";
 
-  constructor(private _api:TestcoService) {}
+  constructor(private _api:APIlocalService) {}
+  
 
   ngOnInit(): void {
-    for (const i of this.echantillon) {
-      this._api.getOne(i).subscribe((h)=>this.Heroes.push(h));
-    }
+    this._api.getRandomHero().subscribe(res=>this.testHTML);
+
+
+
+
+
+    // for (const i of this.echantillon) {
+    //   this._api.getOne(i).subscribe((h)=>this.Heroes.push(h));
+    // }
   // constructor(private _testhttp:TestcoService) { }
 
   // ngOnInit(): void {
