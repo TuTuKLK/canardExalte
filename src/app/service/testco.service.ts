@@ -39,7 +39,6 @@ export class TestcoService {
     return this._http.get(`${this._full_url}/${id}`);
   }
   public getHeroesByName(name:string):Observable<any> {
-        // return this._http.get(this._full_url+'search/'+name);
         return this._http.get(`${this._full_url}search/${name}`);
       }
   // public getGood(id:string): Observable<any>{
