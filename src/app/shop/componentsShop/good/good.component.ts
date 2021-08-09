@@ -22,7 +22,7 @@ export class GoodComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this._api.getRandomHero().subscribe(res=>this.testHTML);
+    // this._api.getRandomHero().subscribe(res=>this.testHTML);
 
 
 
