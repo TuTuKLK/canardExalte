@@ -14,6 +14,12 @@ export class GoodComponent implements OnInit {
   public echantillon: any[] = [
     69, 476, 729, 598, 644, 140, 517, 303, 487, 414, 687, 579, 522, 731, 423, 370
   ];
+  public full:any[]=[];
+  private _remplir(){
+    for(let x=1;732;1){
+      this.full.push(x)
+    }
+  }
 
   public Heroes: any[] = [];
   public testHTML: any;
@@ -39,6 +45,8 @@ export class GoodComponent implements OnInit {
     }
 
     this.getOneGood();
+    this._remplir()
+    console.log(this.full)
 
 
 
