@@ -16,9 +16,7 @@ export class ChronoComponent implements OnInit {
   ngOnInit(): void {
     this.startChrono();
 
-    if(this.seconds < 35){
-      this._timer = setInterval(() => this.removeOneSecond(), 10);
-    }
+
   }
 
   public startChrono(){
@@ -32,6 +30,13 @@ export class ChronoComponent implements OnInit {
 
   private removeOneSecond(){
     this.seconds--;
+    if(this.seconds === 35){
+      this.stopChrono();
+      this._timer = setInterval(() => this.removeOneSecond(), 100);
+    }
+    if(this.seconds === 1){
+      this.stopChrono();
+    }
   }
 
   public stopChrono(){
