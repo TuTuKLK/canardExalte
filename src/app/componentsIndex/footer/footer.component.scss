@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'); /* Footer font */
 
 .Footer {
-    background: #fde841;
+    background: #ffac40;
     .container {
         max-width: 70rem;
         margin: auto;
@@ -25,7 +25,7 @@
         .cacher {
             font-size: 20px;
             font-family: 'Indie Flower', cursive;
-            color: #fde841;
+            color: #ffac40;
         }
 
         /** Logo **/
@@ -75,7 +75,7 @@
 
     /** -- Sub Footer -- **/
     .subfooter {
-        background: #354694;
+        background: #1565b0;
         padding: 10px;
         margin-top: 10px;
         font-family: 'Indie Flower', cursive;
@@ -89,13 +89,13 @@
     .copyright {
         font-size: 44px;
         text-align: center;
-        color:#fde841;
+        color:#ffac40;
     }
         .menu {
             display: flex;
             max-width: 50rem;
             margin: auto;
-            color: #fde841;
+            color: #ffac40;
             font-size: 30px;
             
             li {
@@ -105,7 +105,7 @@
                     padding: 1px;
                     margin: 5px 0px 5px 10px;
                     margin-left: -90%;
-                    color: #fde841;
+                    color: #ffac40;
                     text-decoration: none;
                     &:hover {
                         color: #fa3030;
