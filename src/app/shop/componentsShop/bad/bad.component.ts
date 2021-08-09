@@ -1,3 +1,4 @@
+import { APIlocalService } from 'src/app/services/apilocal.service';
 import { TestcoService } from './../../../service/testco.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
@@ -17,46 +18,32 @@ export class BadComponent implements OnInit {
   public hero = '';
   public align = '';
 
-
-
-  constructor(private _testhttp:TestcoService) { }
-  public getAllBad(element:number){
-    let align=''
-    this._testhttp.getHeroById(element).subscribe(res=>align=res.biograhpy.alignment)
-    console.log(this._testhttp.getHeroById(element).subscribe(res=>res.name))
-    if(align=='bad')
-    return console.log(this._testhttp.getHeroById(element).subscribe(res=>res.name))    
+  public full:any[]=[];
+  private _remplir(){
+    for(let x=1;x<732;x++){
+      this.full.push(x)
+    }
   }
 
+
+
+  constructor(private _testhttp:APIlocalService) { }
+
   ngOnInit(): void {
-  this.echantillon.forEach(element => {
-    this._testhttp.getHeroById(element).subscribe(res=>this.align=res.biography.alignment);
-    this._testhttp.getHeroById(element).subscribe(resp=>this.hero=resp.name);
-    if(this.align==='bad'){
-      console.log(`${this.hero} est dans la liste des Vilains`);
-    }
-    
-      // `${res.biography.alignment=="good"}`?console.log(res.name):undefined);
+  this._remplir()
+  this.full.forEach(element => {
+    this._testhttp.getHeroById(element).subscribe(res=>this._setHero(res));
   });
 
 
-  // this.echantillon.forEach(element => {
-  //   this._testhttp.getHeroById(element).subscribe(res=>this.echantillonVilain.push(res.id));
-  //   this.echantillonVilain.forEach(bla => {
-  //     this._testhttp.getHeroById(bla).subscribe(resp=>console.log(this.hero=resp.name));
-  //   });
-  // });
+    // this._testhttp.getHero().subscribe(reponse=>console.log(reponse));
 
-
-
-
-  
-  this._testhttp.getHero().subscribe(reponse=>console.log(reponse));
-  // this._testhttp.getHeroesByName("batman").subscribe(reponse=>console.log(reponse));
-  
-  // this._testhttp.echantillon.forEach(element => {
-  //   this.getAllBad(element)
-  // });
-
+  }
+  private _setHero(res:any){
+    this.align=res.biography.alignment;
+    this.hero=res.name;
+    if(this.align==='bad'){
+      console.log(`${this.hero} est dans la liste des Vilains`);
     }
+  }
 }

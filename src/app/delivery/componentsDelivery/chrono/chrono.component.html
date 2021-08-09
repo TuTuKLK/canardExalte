@@ -1,4 +1,6 @@
-<p>OK !</p>
-<div>{{this.seconds}}</div>
+<div [ngClass]='{normal:seconds >= 35, red:seconds < 35, stop:seconds === 1}'>Votre commande arrivera dans {{this.seconds}} secondes</div>
+
+
+
 
 
