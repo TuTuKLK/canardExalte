@@ -19,10 +19,14 @@ export class APIlocalService {
   public getRandomHero(): Observable<any> {
     return this._localApi.get(`${this._LocalURL}/${this.IDRandomHero()}`);
   }
-  public getOne():Observable<any>{
+  // public getRandomGoodHero(): Observable<any> {
+  //   while (){ }
+  //   return this._localApi.get(`${this._LocalURL}/${this.IDRandomHero()}`);
+  // }
+  public getOne(): Observable<any> {
     return this._localApi.get(`${this._LocalURL}`);
   }
-  public getHeroById(id:number): Observable<any>{
+  public getHeroById(id: number): Observable<any> {
     return this._localApi.get(`${this._LocalURL}/${id}`);
   }
 }
