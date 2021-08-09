@@ -5,10 +5,16 @@
 <!-- <div *ngIf="testHTML">
   <p>Bonjour {{testHTML.name}} !</p>
 </div> -->
+<div id="vedette">
+  <h3>Hero du jour:</h3>
+  <p *ngIf="testHTML">{{testHTML.name}} !</p>
+  <img id="imgVedette" src="{{testHTML.image.url}}" alt="">
+</div>
+
 <table>
   <thead>
     <tr>
-      <th>Image</th>
+      <th>Illustration</th>
       <th>Hero</th>
       <th>Genre</th>
       <th>Race</th>
