@@ -1,3 +1,4 @@
+import { Link } from './../../modelsIndex/link';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,14 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  
-  constructor() { }
-  
-  public switchToBad(){
-    
+  public links: Link[];
+  constructor() {
+    this.links = [];
   }
-  
+
+  // public switchToBad() { }
+
   ngOnInit(): void {
+    this.links.push(new Link('Accueil', '/'))
+    this.links.push(new Link('Shop', '/shop'))
+    this.links.push(new Link('A Propos', '/'))
+    this.links.push(new Link('Panier', '/'))
   }
 
 }
