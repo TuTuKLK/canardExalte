@@ -5,6 +5,7 @@
         <th>Héro</th>
         <th>Genre</th>
         <th>Race</th>
+        <th>Prix</th>
       </tr>
     </thead>
     <tbody>
@@ -14,8 +15,10 @@
             <td *ngIf="hero">{{hero.name}}</td>
             <td *ngIf="hero">{{hero.appearance.gender}}</td>
             <td *ngIf="hero">{{hero.appearance.race}}</td>
+            <td>2500 $</td>
+            <button><a routerLink="/delivery/confirmation">Validez l'achat</a></button>
             <!-- <td><button (click)="reserveHero(hero)">+</button></td> -->
           </tr>
       </ng-container>
     </tbody>
-  </table>
+</table>
