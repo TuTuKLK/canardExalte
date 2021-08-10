@@ -4,10 +4,12 @@
     <p>{{testHTML.name}} !</p>
     <!-- <p>{{testHTML.id}}</p>
       <p>{{testHTML.biography.alignment}}</p> -->
-    <img id="imgVedette" src="{{testHTML.image.url}}" alt="">
+    <img id="imgVedette" src="{{testHTML.image.url}}" alt="" >
   </ng-container>
 </div>
-
+<div id="btn-vedette">
+  <button (click)="reserveHero(testHTML)">Réserve le héro du jour !</button>
+</div>
 <table>
   <thead>
     <tr>
