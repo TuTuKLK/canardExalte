@@ -17,4 +17,11 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.selectedHeroes);
   }
+
+  deleteHero(hero:any){
+    let idhero = this.selectedHeroes[hero+1];
+    this._cartService.selectedHeroes.splice(idhero, 1);
+  }
+
+
 }
