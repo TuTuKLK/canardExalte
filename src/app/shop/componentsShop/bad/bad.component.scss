@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 *{
-    background-color: #ffeed9;
+    background-color: #000000;
     font-family: 'Indie Flower', cursive;
     font-size: 22px;
+    color: #ff4040;
+}
+
+div{
+    background-color: #000000;
 }
 
 img{
@@ -18,7 +23,7 @@ table{
 }
 #vedette{
     text-align: center;
-    color: #044888;
+    color: #ff4040;
     font-weight: 800;
     font-size: 2rem;
 }
@@ -31,5 +36,8 @@ h3{
 }
 
 button{
-    background-color: #ffac40;
+    background-color: #ff4040;
+    color: black;
+    cursor: pointer;
+    padding: 5px 10px;
 }
