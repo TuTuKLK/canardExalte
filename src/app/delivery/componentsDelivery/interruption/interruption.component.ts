@@ -10,7 +10,14 @@ export class InterruptionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  
+    document.documentElement.addEventListener('click', ()=>this.fullScreen());
+    // document.documentElement.requestFullscreen();
+    document.documentElement.click();
   }
 
+  fullScreen() {
+    let elem = document.documentElement;
+    let methodToBeInvoked = elem.requestFullscreen;
+    if (methodToBeInvoked) methodToBeInvoked.call(elem);
+  }
 }

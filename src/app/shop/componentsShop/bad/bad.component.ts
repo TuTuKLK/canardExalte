@@ -38,19 +38,18 @@ export class BadComponent implements OnInit {
   constructor(private _testhttp: APIlocalService, private _cartService: CartService) { }
 
   public setSrc(html: HTMLImageElement) {
-    html.src = "../../asset/default.png" //! ajouter une image par défaut pour les heros sans image
+    html.src = "../../assets/default.png" //! ajouter une image par défaut pour les heros sans image
   }
 
   ngOnInit(): void {
     this._testhttp.getRandomHero().subscribe(res => this.testHTML = res);
 
-    // this._remplir()
-    this._testhttp.getAllByAlign('bad').subscribe(h => this.allBad);
-    this._testhttp.getAllByAlign('bad').subscribe(h => this.allBad);
-    this.allBad.forEach(element => {
-      
-      console.log(element.name)
-    });
+    this._remplir()
+    this._testhttp.getAllByAlign('bad').subscribe(h => this._recepBad(h));
+
+
+
+
 
 
     // this._testhttp.getAllBad().subscribe(res=>{
@@ -69,26 +68,32 @@ export class BadComponent implements OnInit {
       this._testhttp.getHeroById(id).subscribe((h) => this.Heroes.push(h));
     }
 
-    this.full.forEach(element => {
-      this._testhttp.getHeroById(element).subscribe(res => this._setHero(res));
-    });
+    // this.full.forEach(element => {
+    //   this._testhttp.getHeroById(element).subscribe(res => this._setHero(res));
+    // });
 
 
     // this._testhttp.getHero().subscribe(reponse=>console.log(reponse));
 
   }
-  private _setHero(res: any) {
-    this.align = res.biography.alignment;
-    this.hero = res.name;
-    if (this.align === 'bad') {
-      console.log(`${this.hero} est dans la liste des Vilains`);
-    }
-  }
+  // private _setHero(res: any) {
+  //   this.align = res.biography.alignment;
+  //   this.hero = res.name;
+  //   if (this.align === 'bad') {
+  //     console.log(`${this.hero} est dans la liste des Vilains`);
+  //   }
+  // }
 
     // Ajouter un héro au panier
     public reserveHero(hero:any){
       this._cartService.addHeroToCart(hero);
       console.log(hero)
+    }
+    private _recepBad(allbads:any[]){
+      this.Heroes=allbads
+      this.Heroes.forEach(element => {        
+        console.log('ok')
+      });
     }
 
 }
