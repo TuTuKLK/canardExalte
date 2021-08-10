@@ -53,13 +53,6 @@ export class BadComponent implements OnInit {
     
 
 
-    
-
-
-
-
-
-
     // ? affiche tous les heros gentils
     for (const id of this.full) {
       this._testhttp.getHeroById(id).subscribe((h) => this.Heroes.push(h));
