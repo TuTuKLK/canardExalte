@@ -1,3 +1,4 @@
+import { CartService } from './../../../services/cart.service';
 import { APIService } from './../../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { TestcoService } from './../../../service/testco.service';
@@ -28,7 +29,7 @@ export class GoodComponent implements OnInit {
       this.full.push(x)
     }
   }
-  constructor(private _api: APIlocalService) { }
+  constructor(private _api: APIlocalService, private _cartService: CartService) { }
 
   // ? afficher un gentil aéatoire en prenant en compte l'asynchrone 
   // public getOneGood() {
@@ -84,6 +85,11 @@ export class GoodComponent implements OnInit {
     if (this.align === 'good') {
       console.log(`${this.hero} est dans la liste des Héros`);
     }
+  }
+
+  public reserveHero(hero:any){
+    this._cartService.addHeroToCart(hero);
+    console.log(hero)
   }
 
 }

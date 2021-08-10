@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
     this.links.push(new Link('Accueil', '/'))
     this.links.push(new Link('Shop', '/shop'))
     this.links.push(new Link('A Propos', '/apropos'))
-    this.links.push(new Link('Panier', '/'))
+    this.links.push(new Link('Panier', '/shop/cart'))
   }
 
 }

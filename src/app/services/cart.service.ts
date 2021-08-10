@@ -5,19 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
 
-  public buyedProducts : any[] = [];
-
-  public get total(): number{
-    let t = 0;
-    for(let p of this.buyedProducts){
-      t+=p.price;
-    }
-    return t;
-  }
+  public selectedHeroes : any[] = [];
 
   constructor() { }
 
-  public addProductToCart(product: any){
-    this.buyedProducts.push(product)
+  public addHeroToCart(product: any){
+    this.selectedHeroes.push(product);
+    console.log(this.selectedHeroes);
   }
+
+
 }

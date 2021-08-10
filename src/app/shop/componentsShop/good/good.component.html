@@ -33,7 +33,8 @@
           <td *ngIf="hero">{{hero.name}}</td>
           <td *ngIf="hero">{{hero.appearance.gender}}</td>
           <td *ngIf="hero">{{hero.appearance.race}}</td>
-          <td><button>+</button></td>
+          <td><button (click)="reserveHero(hero)">+</button></td>
+          <td><a routerLink="/shop/cart"><button>Go to Cart</button></a></td>
         </tr>
       </ng-container>
     </ng-container>
