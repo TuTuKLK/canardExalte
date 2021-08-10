@@ -14,6 +14,7 @@ nav{
     left: 0;
     padding: .5rem;
     background-color: #1565b0;
+    z-index: 2;
 }
 #logo{
     font-weight: 700;
@@ -55,5 +56,6 @@ nav li a:hover:before{
     width: 110%;
 }
 .sousNav{
-    height: 2.8rem;
+    height: 5.8rem;
+    background-color: #1565b0;
 }
