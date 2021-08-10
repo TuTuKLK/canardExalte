@@ -9,7 +9,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // position: fixed;
+    position: fixed;
     top: 1rem;
     left: 0;
     padding: .5rem;
@@ -53,4 +53,7 @@ nav li a:before{
 nav li a:hover:before{
     background-color: #ffac40;
     width: 110%;
+}
+.sousNav{
+    height: 2.8rem;
 }
