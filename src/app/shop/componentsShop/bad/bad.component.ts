@@ -17,7 +17,7 @@ export class BadComponent implements OnInit {
   public nameHero: string = 'buffy';
 
   public Heroes: any[] = [];
-  public allBad: any ;
+  public allBad: any[]=[] ;
 
 
   public testHTML: any;
@@ -44,12 +44,22 @@ export class BadComponent implements OnInit {
     this._testhttp.getRandomHero().subscribe(res => this.testHTML = res);
 
     // this._remplir()
-
-
-    this._testhttp.getAllBad().subscribe(res=>{
-      console.log(res);
-      console.log('toto');
+    this._testhttp.getAllByAlign('bad').subscribe(h => this.allBad);
+    this._testhttp.getAllByAlign('bad').subscribe(h => this.allBad);
+    this.allBad.forEach(element => {
+      
+      console.log(element.name)
     });
+
+
+    // this._testhttp.getAllBad().subscribe(res=>{
+    //   console.log(res);
+    //   console.log('toto');
+    // });
+    // this._testhttp.getAllBad().forEach(element => {
+    //   console.log(element)
+    // });
+
     
 
 
@@ -73,4 +83,6 @@ export class BadComponent implements OnInit {
       console.log(`${this.hero} est dans la liste des Vilains`);
     }
   }
+
+
 }

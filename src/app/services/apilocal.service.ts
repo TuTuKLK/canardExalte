@@ -51,6 +51,13 @@ export class APIlocalService {
       map(result=>result.
         filter((res:any)=>res.biography?.alignment===align)))
   }
+  public getAllByIntel(stat:number): Observable<any[]>{
+    return this.getAll().pipe(
+      map(result=>result.results),
+      map(result=>result.
+        filter((res:any)=>res.powerstats?.intelligence >= stat)))
+
+  }
 // ? ***********************************************************************************
   
 
