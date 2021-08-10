@@ -17,6 +17,8 @@ export class GoodComponent implements OnInit {
   public full: any[] = [];
 
   public Heroes: any[] = [];
+  private _allGood : any []=[]
+
   public testHTML: any;
   public good: any;
 
