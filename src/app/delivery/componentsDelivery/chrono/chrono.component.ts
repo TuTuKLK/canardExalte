@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chrono',
@@ -11,7 +12,7 @@ export class ChronoComponent implements OnInit {
   private _timer: any;
   public state: any;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.startChrono();
@@ -36,6 +37,7 @@ export class ChronoComponent implements OnInit {
     }
     if(this.seconds === 1){
       this.stopChrono();
+      this.router.navigateByUrl('/interruption');
     }
   }
 
