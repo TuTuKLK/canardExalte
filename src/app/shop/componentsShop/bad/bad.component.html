@@ -8,8 +8,9 @@
   </ng-container>
 </div>
 <div id="btn-vedette">
-  <button (click)="reserveHero(testHTML)">Réserve le héro du jour !</button>
+  <button (click)="reserveHero(testHTML)">Réserve le vilain du jour !</button>
 </div>
+<div>
 <table>
   <thead>
     <tr>
@@ -31,9 +32,13 @@
           <td><button (click)="reserveHero(hero)">+</button></td>
           <td><a routerLink="/shop/cart"><button>Go to Cart</button></a></td>
         </tr>
+      </ng-container>
+    </ng-container>
+  </tbody>
+</table>
+</div> 
 
-<div>
-  <table>
+  <!--<table>
     <thead>
       <tr>
         <th>Illustration</th>
@@ -53,9 +58,5 @@
             <td *ngIf="hero">{{hero.appearance.race}}</td>
             <td><button (click)="reserveHero(hero)">+</button></td>
             <td><a routerLink="/shop/cart"><button>Go to Cart</button></a></td>
-          </tr>
-        </ng-container>
-      </ng-container>
-    </tbody>
-  </table>
-</div>
+          </tr> -->
+
