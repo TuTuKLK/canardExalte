@@ -19,8 +19,8 @@ export class CartComponent implements OnInit {
   }
 
   deleteHero(hero:any){
-    let idhero = this.selectedHeroes[hero+1];
-    this._cartService.selectedHeroes.splice(idhero, 1);
+    // let index = this._cartService.selectedHeroes[hero];
+    this._cartService.selectedHeroes = this._cartService.selectedHeroes.filter(h=>h!=hero);
   }
 
 
