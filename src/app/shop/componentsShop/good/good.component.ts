@@ -89,7 +89,7 @@ export class GoodComponent implements OnInit {
     //   }
   }
 
-  public reserveHero(hero: any) {
+
   // Ajouter un héro au panier
   public reserveHero(hero:any){
     this._cartService.addHeroToCart(hero);
