@@ -89,9 +89,9 @@ export class GoodComponent implements OnInit {
     }
   }
 
+  // Ajouter un héro au panier
   public reserveHero(hero:any){
     this._cartService.addHeroToCart(hero);
-    console.log(hero)
   }
 
 }

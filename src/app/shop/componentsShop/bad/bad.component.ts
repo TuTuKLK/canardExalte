@@ -1,3 +1,4 @@
+import { CartService } from './../../../services/cart.service';
 import { Observable } from 'rxjs';
 import { APIlocalService } from 'src/app/services/apilocal.service';
 import { TestcoService } from './../../../service/testco.service';
@@ -34,7 +35,7 @@ export class BadComponent implements OnInit {
 
 
 
-  constructor(private _testhttp: APIlocalService) { }
+  constructor(private _testhttp: APIlocalService, private _cartService: CartService) { }
 
   public setSrc(html: HTMLImageElement) {
     html.src = "../../asset/default.png" //! ajouter une image par défaut pour les heros sans image
@@ -73,4 +74,10 @@ export class BadComponent implements OnInit {
       console.log(`${this.hero} est dans la liste des Vilains`);
     }
   }
+
+    // Ajouter un héro au panier
+    public reserveHero(hero:any){
+      this._cartService.addHeroToCart(hero);
+      console.log(hero)
+    }
 }

@@ -14,5 +14,4 @@ export class CartService {
     console.log(this.selectedHeroes);
   }
 
-
 }
