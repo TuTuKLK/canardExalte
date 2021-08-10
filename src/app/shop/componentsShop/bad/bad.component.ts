@@ -35,28 +35,28 @@ export class BadComponent implements OnInit {
 
 
 
-  constructor(private _testhttp: APIlocalService, private _cartService: CartService) { }
+  constructor(private _api: APIlocalService, private _cartService: CartService) { }
 
   public setSrc(html: HTMLImageElement) {
     html.src = "../../assets/default.png" //! ajouter une image par défaut pour les heros sans image
   }
 
   ngOnInit(): void {
-    this._testhttp.getRandomHero().subscribe(res => this.testHTML = res);
+    this._api.getRandomHero().subscribe(res => this.testHTML = res);
 
     this._remplir()
-    this._testhttp.getAllByAlign('bad').subscribe(h => this._recepBad(h));
+    this._api.getAllByAlign('bad').subscribe(h => this._recepBad(h));
 
 
 
 
 
 
-    // this._testhttp.getAllBad().subscribe(res=>{
+    // this._api.getAllBad().subscribe(res=>{
     //   console.log(res);
     //   console.log('toto');
     // });
-    // this._testhttp.getAllBad().forEach(element => {
+    // this._api.getAllBad().forEach(element => {
     //   console.log(element)
     // });
 
@@ -65,15 +65,15 @@ export class BadComponent implements OnInit {
 
     // ? affiche tous les heros gentils
     for (const id of this.full) {
-      this._testhttp.getHeroById(id).subscribe((h) => this.Heroes.push(h));
+      this._api.getHeroById(id).subscribe((h) => this.Heroes.push(h));
     }
 
     // this.full.forEach(element => {
-    //   this._testhttp.getHeroById(element).subscribe(res => this._setHero(res));
+    //   this._api.getHeroById(element).subscribe(res => this._setHero(res));
     // });
 
 
-    // this._testhttp.getHero().subscribe(reponse=>console.log(reponse));
+    // this._api.getHero().subscribe(reponse=>console.log(reponse));
 
   }
   // private _setHero(res: any) {
