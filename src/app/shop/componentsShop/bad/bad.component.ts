@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { APIlocalService } from 'src/app/services/apilocal.service';
 import { TestcoService } from './../../../service/testco.service';
 import { Component, Input, OnInit } from '@angular/core';
@@ -16,6 +17,9 @@ export class BadComponent implements OnInit {
   public nameHero: string = 'buffy';
 
   public Heroes: any[] = [];
+  public allBad: any ;
+
+
   public testHTML: any;
 
   public hero = '';
@@ -39,7 +43,15 @@ export class BadComponent implements OnInit {
   ngOnInit(): void {
     this._testhttp.getRandomHero().subscribe(res => this.testHTML = res);
 
-    this._remplir()
+    // this._remplir()
+
+
+    this._testhttp.getAllBad().subscribe(res=>{
+      console.log(res);
+      console.log('toto');
+    });
+    
+
 
     // ? affiche tous les heros gentils
     for (const id of this.full) {
